@@ -1,0 +1,2 @@
+alias run="gradle run"
+alias test="gradle test"
