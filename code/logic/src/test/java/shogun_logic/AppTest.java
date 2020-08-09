@@ -3,8 +3,8 @@
  */
 package shogun_logic;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AppTest {
     @Test public void testAppHasAGreeting() {

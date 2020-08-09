@@ -1,12 +1,14 @@
 package shogun_logic;
 
+import utils.LimitedPoint;
+
 public class MoveNumberGenerator {
   
   public MoveNumberGenerator() {
 
   }
  
-  public int genMoveNumber(Piece piece, int x_pos, int y_pos) {
+  public int genMoveNumber(Piece piece, LimitedPoint point ) {
     return 1;
   }
 }
