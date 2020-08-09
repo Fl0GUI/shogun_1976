@@ -35,4 +35,16 @@ public class BoardTest {
     });
   }
 
+  @Test public void testBoardPutGet() {
+    Board b1 = BoardFactory.emptyBoard(1);
+    b1.putPiece(new Piece(0, true, Color.RED), 0, 0);
+    assertTrue(b1.getPiece(0, 0).isPresent());
+    assertEquals(b1.getPiece(0,0).get().getColor(), Color.RED);
+    assertFalse(b1.getPiece(1, 2).isPresent());
+
+    Board b2 = BoardFactory.emptyBoard(2);
+    b2.putPiece(new Piece(0, true, Color.RED), 0, 1);
+    assertFalse(b2.getPiece(1, 0).isPresent());
+  }
+
 }

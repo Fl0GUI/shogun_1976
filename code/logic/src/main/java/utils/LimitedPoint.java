@@ -81,6 +81,10 @@ public class LimitedPoint {
     LimitedPoint point = (LimitedPoint) o;
     return this.getX() == point.getX() && this.getY() == point.getY();
   }
+
+  public boolean equals(int x, int y) {
+    return this.getX() == x && this.getY() == y;
+  }
   
   private boolean inLimit(int x, int y) {
     return 0 <= x && x <= this.x_limit && 0 <= y && y <= y_limit;

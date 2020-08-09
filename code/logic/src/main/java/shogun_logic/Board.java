@@ -2,6 +2,7 @@ package shogun_logic;
 
 import java.util.ArrayList;
 import java.lang.RuntimeException;
+import java.util.Optional;
 
 import utils.LimitedPoint;
 
@@ -50,6 +51,14 @@ public class Board {
     piece.setMoves(moves);
     this.board.add(new PlacedPiece(p, piece));
     return true;
+  }
+
+  public Optional<Piece> getPiece(int x, int y) {
+    return this.board.stream().filter((e) -> {
+      return e.point.equals(x, y);
+    }).findAny().map((o) -> {
+      return o.piece;
+    });
   }
 }
 
