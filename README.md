@@ -3,9 +3,11 @@ Shogun is a simple board game where 2 players each have 8 pieces and try to capt
 
 
 
-#### From the game manual:
+#### From the box:
 
-The number on a piece changes while it is being moved across the board. The number on the piece before a move is begun dictates the number of squares to be moved. The number showing once the move is completed is valid for the next move with that piece.
+> In this fame the number on each piece determines how many squares it can move. But watch out! Every time a piece is played the number may change! 
+> 
+> Combine strategy with luck and suspense as you try to capture your opponent's Shogun.
 
 Read the whole game manual and see the box in the *physical* folder.
 
