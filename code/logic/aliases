@@ -1,2 +1,3 @@
 alias run="gradle run"
+alias build="gradle build"
 alias test="gradle test"
