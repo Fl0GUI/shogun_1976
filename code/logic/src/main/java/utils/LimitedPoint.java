@@ -28,6 +28,14 @@ public class LimitedPoint {
     return this.x;
   }
 
+  public int getXLimit() {
+    return this.x_limit;
+  }
+
+  public int getYLimit() {
+    return this.y_limit;
+  }
+
   public int getY() {
     return this.y;
   }
