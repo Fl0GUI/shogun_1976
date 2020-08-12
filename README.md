@@ -1,3 +1,5 @@
+![Logic](https://github.com/Fl0GUI/shogun_1976/workflows/Logic/badge.svg)
+
 # shogun board game(1976)
 Shogun is a simple board game where 2 players each have 8 pieces and try to capture the other player's pieces. The rules are simple but the game comes with a twist.
 
