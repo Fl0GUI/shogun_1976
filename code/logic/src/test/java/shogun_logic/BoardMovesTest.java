@@ -77,9 +77,22 @@ public class BoardMovesTest {
     Board b = BoardFactory.emptyBoard(8);
     assertEquals(0, b.getValidMoves(0, 0).size());
     Piece p1 = new Piece(0, false, Color.WHITE);
-    p1.setMoves(1);
     b.putPiece(p1, 0, 0);
+    p1.setMoves(1);
     assertEquals(2, b.getValidMoves(0, 0).size());
+    p1.setMoves(2);
+    assertEquals(3, b.getValidMoves(0, 0).size());
+    p1.setMoves(3);
+    assertEquals(4, b.getValidMoves(0, 0).size());
+
+    Piece p2 = new Piece(0, false, Color.WHITE);
+    b.putPiece(p2, 0, 1);
+    p2.setMoves(1);
+    assertEquals(2, b.getValidMoves(0, 1).size());
+
+    Piece p3 = new Piece(0, false, Color.RED);
+    b.putPiece(p3, 0, 2);
+    assertEquals(2, b.getValidMoves(0, 1).size());
   }
 
 }
