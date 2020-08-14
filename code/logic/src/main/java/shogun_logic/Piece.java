@@ -14,6 +14,10 @@ public class Piece {
     this.color = color;
   }
 
+  public int getMoves() {
+    return this.moves;
+  }
+
   public void setMoves(int moves) {
     this.moves = moves;
   }
