@@ -43,4 +43,17 @@ This means that a piece with `1 4 2 3` as values will have the next values when 
 1 4 1 4 2 3 2 3 
 ```
 
+Converting this to the index of the number would mean:
+```
+2 1 2 1 4 3 4 3 
+3 4 3 4 1 2 1 2 
+2 1 2 1 4 3 4 3 
+3 4 3 4 1 2 1 2 
+4 3 4 3 2 1 2 1 
+1 2 1 2 3 4 3 4 
+4 3 4 3 2 1 2 1 
+1 2 1 2 3 4 3 4 
+```
+This holds for any piece in the same rotation.
+
 Please don't memorize this in order to cheat.
