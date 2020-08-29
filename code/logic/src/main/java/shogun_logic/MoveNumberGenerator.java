@@ -14,11 +14,16 @@ public class MoveNumberGenerator {
     this.rotation = rotation;
   }
 
-  public int genMoveNumber(Piece piece, LimitedPoint point ) {
-    int[][] indices = {{0, 3},{1, 2}};
+  
+  public int genMoveNumber(Piece piece, LimitedPoint point, int board_size) {
     int x = point.getX();
     int y = point.getY();
-    boolean samesign = (((x + 0.5) - point.getXLimit()/2) * ((y + 0.5) - point.getYLimit()/2)) >= 0;
+    return this.genMoveNumber(piece, x, y, board_size);
+  }
+
+  public int genMoveNumber(Piece piece, int x, int y, int board_size) {
+    int[][] indices = {{0, 3},{1, 2}};
+    boolean samesign = (((x + 0.5) - board_size/2) * ((y + 0.5) - board_size/2)) >= 0;
 
     int x_index = x % 2;
     int y_index = y % 2;

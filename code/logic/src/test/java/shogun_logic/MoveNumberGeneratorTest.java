@@ -46,7 +46,7 @@ public class MoveNumberGeneratorTest {
               } else {
                 value = numbers[(i+2)%4];
               }
-              assertEquals(value, moveGen.genMoveNumber(piece, p));
+              assertEquals(value, moveGen.genMoveNumber(piece, p, 8));
             
             }
           }
