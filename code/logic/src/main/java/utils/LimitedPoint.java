@@ -5,8 +5,6 @@ import java.lang.RuntimeException;
 public class LimitedPoint {
 
   private Point point;
-  private int x = 0;
-  private int y = 0;
 
   private int x_limit;
   private int y_limit;
@@ -52,18 +50,19 @@ public class LimitedPoint {
     }
   }
 
-  public void setLocation(int x, int y) {
+  public LimitedPoint setLocation(int x, int y) {
     if (this.inLimit(x, y)) {
       this.point.x = x;
       this.point.y = y;
+      return this;
     } else {
       throw new RuntimeException("New Point not in limits");
     }
   }
 
-  public void setLocation(LimitedPoint p) {
+  public LimitedPoint setLocation(LimitedPoint p) {
     if (this.inLimit(p.getX(), p.getY())) {
-      this.setLocation(x, y);
+      return this.setLocation(p.getX(), p.getY());
     } else {
       throw new RuntimeException("New Point not in limits");
     }
@@ -96,6 +95,11 @@ public class LimitedPoint {
 
   public boolean equals(int x, int y) {
     return this.getX() == x && this.getY() == y;
+  }
+
+  @Override
+  public String toString() {
+    return "(" + this.point.x + "/" + this.x_limit + "," + this.point.y + "/" + this.y_limit + ")";
   }
   
   private boolean inLimit(int x, int y) {

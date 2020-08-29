@@ -7,7 +7,8 @@ public class BoardMovesTest {
 
   @Test public void testValidMoves() {
     Board b = BoardFactory.emptyBoard(8);
-    Piece p1 = new Piece(0, false, Color.WHITE);
+    int[] zeros = {0,0,0,0};
+    Piece p1 = new Piece(zeros, false, Color.WHITE);
     b.putPiece(p1, 0, 0);
     p1.setMoves(2);
     assertTrue(b.isValidMove(0, 0, 1, 1));
@@ -17,7 +18,7 @@ public class BoardMovesTest {
     p1.setMoves(14);
     assertTrue(b.isValidMove(0, 0, 7, 7));
 
-    Piece p2 = new Piece(0, false, Color.RED);
+    Piece p2 = new Piece(zeros, false, Color.RED);
     b.putPiece(p2, 4, 4);
     p1.setMoves(2);
     assertTrue(b.isValidMove(0, 0, 1, 1));
@@ -37,10 +38,10 @@ public class BoardMovesTest {
     assertTrue(b.isValidMove(4, 4, 1, 6));
     assertTrue(b.isValidMove(4, 4, 6, 1));
 
-    b.putPiece(new Piece(0, false, Color.WHITE), 0, 1);
-    b.putPiece(new Piece(0, false, Color.WHITE), 1, 0);
-    b.putPiece(new Piece(0, false, Color.WHITE), 7, 0);
-    b.putPiece(new Piece(0, false, Color.WHITE), 0, 7);
+    b.putPiece(new Piece(zeros, false, Color.WHITE), 0, 1);
+    b.putPiece(new Piece(zeros, false, Color.WHITE), 1, 0);
+    b.putPiece(new Piece(zeros, false, Color.WHITE), 7, 0);
+    b.putPiece(new Piece(zeros, false, Color.WHITE), 0, 7);
     p2.setMoves(7);
     assertTrue(b.isValidMove(4, 4, 0, 7));
     assertTrue(b.isValidMove(4, 4, 7, 0));
@@ -50,7 +51,8 @@ public class BoardMovesTest {
     Board b = BoardFactory.emptyBoard(8);
     assertFalse(b.isValidMove(0, 0, 0, 1));
 
-    Piece p1 = new Piece(0, false, Color.WHITE);
+    int[] zeros = {0,0,0,0};
+    Piece p1 = new Piece(zeros, false, Color.WHITE);
     b.putPiece(p1, 0, 0);
     p1.setMoves(9);
     assertFalse(b.isValidMove(0, 0, 0, 9));
@@ -59,16 +61,16 @@ public class BoardMovesTest {
     p1.setMoves(10);
     assertFalse(b.isValidMove(0, 0, -1, 0));
 
-    b.putPiece(new Piece(0, false, Color.WHITE), 0, 1);
+    b.putPiece(new Piece(zeros, false, Color.WHITE), 0, 1);
     p1.setMoves(1);
     assertFalse(b.isValidMove(0, 0, 0, 1));
 
-    b.putPiece(new Piece(0, false, Color.WHITE), 1, 0);
+    b.putPiece(new Piece(zeros, false, Color.WHITE), 1, 0);
     p1.setMoves(1);
     assertFalse(b.isValidMove(0, 0, 1, 0));
 
-    b.putPiece(new Piece(0, false, Color.WHITE), 7, 0);
-    b.putPiece(new Piece(0, false, Color.WHITE), 0, 7);
+    b.putPiece(new Piece(zeros, false, Color.WHITE), 7, 0);
+    b.putPiece(new Piece(zeros, false, Color.WHITE), 0, 7);
     p1.setMoves(14);
     assertFalse(b.isValidMove(0, 0, 7, 7));
   }
@@ -76,7 +78,8 @@ public class BoardMovesTest {
   @Test public void testGetValidMoves() {
     Board b = BoardFactory.emptyBoard(8);
     assertEquals(0, b.getValidMoves(0, 0).size());
-    Piece p1 = new Piece(0, false, Color.WHITE);
+    int[] zeros = {0,0,0,0};
+    Piece p1 = new Piece(zeros, false, Color.WHITE);
     b.putPiece(p1, 0, 0);
     p1.setMoves(1);
     assertEquals(2, b.getValidMoves(0, 0).size());
@@ -85,12 +88,12 @@ public class BoardMovesTest {
     p1.setMoves(3);
     assertEquals(4, b.getValidMoves(0, 0).size());
 
-    Piece p2 = new Piece(0, false, Color.WHITE);
+    Piece p2 = new Piece(zeros, false, Color.WHITE);
     b.putPiece(p2, 0, 1);
     p2.setMoves(1);
     assertEquals(2, b.getValidMoves(0, 1).size());
 
-    Piece p3 = new Piece(0, false, Color.RED);
+    Piece p3 = new Piece(zeros, false, Color.RED);
     b.putPiece(p3, 0, 2);
     assertEquals(2, b.getValidMoves(0, 1).size());
   }

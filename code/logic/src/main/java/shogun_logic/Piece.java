@@ -3,11 +3,11 @@ package shogun_logic;
 public class Piece {
 
   private int moves;
-  public final int variation;
+  public final int[] variation;
   private final boolean shogun;
   private final Color color;
 
-  public Piece(int variation, boolean shogun, Color color) {
+  public Piece(int[] variation, boolean shogun, Color color) {
     this.moves = 0;
     this.variation = variation;
     this.shogun = shogun;
@@ -28,6 +28,10 @@ public class Piece {
 
   public Color getColor() {
     return this.color;
+  }
+
+  public int[] getVariation() {
+    return this.variation;
   }
 
   public boolean canTake(Piece enemy) {

@@ -27,7 +27,6 @@ public class Board {
     }
   }
 
-  private int rotation = 0;
   private int boardSize;
 
   private MoveNumberGenerator moveNumGen;
