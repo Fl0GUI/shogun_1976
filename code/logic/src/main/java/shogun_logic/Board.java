@@ -16,7 +16,7 @@ import utils.Point;
 
 public class Board {
   
-  private ArrayList<PlacedPiece> board = new ArrayList();
+  private List<PlacedPiece> board = new ArrayList();
 
   class PlacedPiece {
     public LimitedPoint point;
@@ -46,6 +46,10 @@ public class Board {
 
   public List<Point> getValidMoves(Point point) {
     return this.getValidMoves(point.x, point.y);
+  }
+
+  public boolean makeMove(Point from, Point to) {
+    return this.makeMove(from.x, from.y, to.x, to.y);
   }
 
   public Optional<Piece> getPiece(Point point) {
@@ -158,6 +162,23 @@ public class Board {
       return this.isValidMove(from_x, from_y, p.x, p.y);
     }).collect(Collectors.toList());
   }
+
+  public boolean makeMove(int from_x, int from_y, int to_x, int to_y) {
+    if( ! this.isValidMove(from_x, from_y, to_x, to_y)) {
+      return false;
+    }
+
+    this.board = this.board.stream().filter((e) -> {
+      return ! e.point.equals(to_x, to_y);
+    }).map((e) -> {
+      if(e.point.equals(from_x, from_y)) {
+        e.point.move(to_x, to_y);
+      }
+      return e;
+    }).collect(Collectors.toList());
+
+    return true;
+  };
 
   public Optional<Piece> getPiece(int x, int y) {
     return this.board.stream().filter((e) -> {
