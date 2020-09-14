@@ -97,18 +97,24 @@ public class BoardMovesTest {
 
   @Test public void testMakeValidMove() {
     Board b;
-    Piece p;
+    Piece p, white;
     int[] nums = new int[4];
+    int[] whitenums = getVariation(1);
 
     b = BoardFactory.emptyBoard(8);
     nums = getVariation(2);
 
     p = new Piece(nums, false, Color.RED);
+    white = new Piece(whitenums, false, Color.WHITE);
 
     b.putPiece(p, 0, 0);
+    b.putPiece(white, 7, 7);
     assertTrue(b.makeMove(0, 0, 1, 1));
+    assertTrue(b.makeMove(7, 7, 6, 7));
     assertTrue(b.makeMove(1, 1, 1, 3));
+    assertTrue(b.makeMove(6, 7, 7, 7));
     assertTrue(b.makeMove(1, 3, 3, 3));
+    assertTrue(b.makeMove(7, 7, 6, 7));
     assertTrue(b.makeMove(3, 3, 3, 1));
   }
 
@@ -150,13 +156,16 @@ public class BoardMovesTest {
     assertTrue(b.getPiece(0, 0).isEmpty());
     assertTrue(b.getPiece(1, 1).isPresent());
 
-    b.putPiece(p2, 1, 3);
+    b.putPiece(p2, 0, 2);
+    b.makeMove(0, 2, 1, 3);
     assertTrue(b.makeMove(1, 1, 1, 3));
   
-    b.putPiece(p2, 2, 4);
+    b.putPiece(p2, 2, 2);
+    b.makeMove(2, 2, 2, 4);
     assertTrue(b.makeMove(1, 3, 2, 4));
 
-    b.putPiece(p2, 4, 4);
+    b.putPiece(p2, 3, 3);
+    b.makeMove(3, 3, 4, 4);
     assertTrue(b.makeMove(2, 4, 4, 4));
   }
 
