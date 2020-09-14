@@ -28,12 +28,18 @@ public class Board {
   }
 
   private int board_size;
+  private Color currentTurn;
 
   private MoveNumberGenerator moveNumGen;
 
   public Board(int board_size, MoveNumberGenerator moveNumGen) {
     this.board_size = board_size;
+    this.currentTurn = Color.RED;
     this.moveNumGen = moveNumGen;
+  }
+
+  public Color getTurn() {
+    return this.currentTurn;
   }
 
   public boolean putPiece(Piece piece, Point point) {
@@ -94,6 +100,9 @@ public class Board {
       return false;
     } // There is a piece to be moved
 
+    if ( toBeMoved.get().getColor() != this.currentTurn ) {
+      return false;
+    }
 
     int moveDistance = Math.abs(from_x - to_x) + Math.abs(from_y - to_y);
     int moves = this.moveNumGen.genMoveNumber(toBeMoved.get(), from_x, from_y, this.board_size);
@@ -176,6 +185,8 @@ public class Board {
       }
       return e;
     }).collect(Collectors.toList());
+
+    this.currentTurn = this.currentTurn.next();
 
     return true;
   };
