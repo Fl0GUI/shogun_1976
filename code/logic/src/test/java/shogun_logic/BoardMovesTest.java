@@ -12,26 +12,26 @@ public class BoardMovesTest {
 
     b = BoardFactory.emptyBoard(8);
     nums = getVariation(0);
-    p = new Piece(nums, false, Color.WHITE);
+    p = new Piece(nums, false, Color.RED);
     b.putPiece(p, 4, 4);
     assertEquals(0, b.getValidMoves(4, 4).size());
 
 
     b = BoardFactory.emptyBoard(8);
     nums = getVariation(1);
-    p = new Piece(nums, false, Color.WHITE);
+    p = new Piece(nums, false, Color.RED);
     b.putPiece(p, 4, 4);
     assertEquals(4, b.getValidMoves(4, 4).size());
 
     b = BoardFactory.emptyBoard(8);
     nums = getVariation(2);
-    p = new Piece(nums, false, Color.WHITE);
+    p = new Piece(nums, false, Color.RED);
     b.putPiece(p, 4, 4);
     assertEquals(8, b.getValidMoves(4, 4).size());
 
     b = BoardFactory.emptyBoard(8);
     nums = getVariation(3);
-    p = new Piece(nums, false, Color.WHITE);
+    p = new Piece(nums, false, Color.RED);
     b.putPiece(p, 4, 4);
     assertEquals(12, b.getValidMoves(4, 4).size());
   }
@@ -43,13 +43,13 @@ public class BoardMovesTest {
 
     b = BoardFactory.emptyBoard(8);
     nums = getVariation(1);
-    p = new Piece(nums, false, Color.WHITE);
+    p = new Piece(nums, false, Color.RED);
     b.putPiece(p, 0, 0);
     assertEquals(2, b.getValidMoves(0, 0).size());
 
     b = BoardFactory.emptyBoard(8);
     nums = getVariation(2);
-    p = new Piece(nums, false, Color.WHITE);
+    p = new Piece(nums, false, Color.RED);
     b.putPiece(p, 0, 0);
     assertEquals(3, b.getValidMoves(0, 0).size());
   }
@@ -93,7 +93,6 @@ public class BoardMovesTest {
     b.putPiece(white, 3, 5);
 
     assertTrue(b.isValidMove(2, 2, 3, 5));
-    assertTrue(b.isValidMove(3, 5, 2, 2));
   }
 
   @Test public void testMakeValidMove() {
