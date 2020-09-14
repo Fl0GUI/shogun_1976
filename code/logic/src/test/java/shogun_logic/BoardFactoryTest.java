@@ -7,12 +7,15 @@ import java.util.ArrayList;
 
 public class BoardFactoryTest {
 
-  @Test public void testDefaultBoardNotNull() {
-    Board defaultBoard = BoardFactory.defaultBoard();
-    assertNotNull(defaultBoard);
+  @Test public void testRandomBoardAllPieces() {
+    Board b = BoardFactory.randomBoard();
+
+    for( int i=0; i<8; i++) {
+      assertTrue(b.getPiece(0, i).isPresent());
+      assertTrue(b.getPiece(0, i).get().getColor() == Color.RED);
+      assertTrue(b.getPiece(7, i).isPresent());
+      assertTrue(b.getPiece(7, i).get().getColor() == Color.WHITE);
+    }
   }
 
-  @Test public void testSimpleBoardAllPieces() {
-    Board simple = BoardFactory.simpleBoard();
-  }
 }
