@@ -1,6 +1,6 @@
 [Google Patents](https://patents.google.com/patent/US4083564A/en) 
 
-Fig. 12 is a good illustration on the inner workings of a piece.
+Fig. 5 is a good illustration on the inner workings of a piece.
 
 **Disclaimer**: The following information was gathered using a single game board. If you have a copy of the board as well and you find different information please make contact or create an issue.
 
