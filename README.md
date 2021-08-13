@@ -21,3 +21,7 @@ The aim of this repository is to immortalize the board game but also create a di
 
 
 Special thanks to spielerebell-77 on ebay for having a copy of this game in such pristine condition. 
+
+#### Where to play
+
+play it on [tabletop simulator](https://steamcommunity.com/sharedfiles/filedetails/?id=2572439138) using steam
